@@ -32,7 +32,7 @@ export class Test1Component implements OnInit {
   }
 
   onSubmitNumbers(Numbers) {
-    console.warn('Your order has been submitted', Numbers);
+    console.warn(Numbers);
     this.numbersCount = (Numbers.numbers); 
     console.log(this.numbersCount)
 

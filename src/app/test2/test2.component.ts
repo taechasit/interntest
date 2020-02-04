@@ -26,14 +26,12 @@ export class Test2Component implements OnInit {
   }
 
   onSubmitNumbers(Numbers) {
-    console.warn('Your order has been submitted', Numbers);
+    console.warn(Numbers);
     this.numCheck = Numbers.numbers
     if(this.numCheck !== 0.0){
       this.getOnlyNumber(Numbers.numbers)
     }
 
-    //this.isprime = this.isPrime(Numbers.numbers)
-    //this.isprimeArray.push({'number':Numbers.numbers,'isPrime': this.isprime})
     this.isprimeArray = this.isprimeArray.filter(n => n.isPrime == true || n.number > 1000)
     console.log(this.isprimeArray)
     this.numbersform.reset();

@@ -1,0 +1,26 @@
+<form *ngIf="numbersCount <= 0"class="form" [formGroup]="numbersform" (ngSubmit)="onSubmitNumbers(numbersform.value)">
+    <div>
+        <mat-form-field class="full-width">
+            <input matInput placeholder="EnterNumber" formControlName="numbers" id="numbers" type="number">
+        </mat-form-field>
+        <button mat-button class="btn" type="submit">ENTER</button>
+    </div>
+</form>
+
+<form *ngIf="numbersCount > 0" class="form" [formGroup]="nameform" (ngSubmit)="onSubmitName(nameform.value)">
+    
+    <div>
+        {{numbersCount}} : 
+        <mat-form-field class="full-width">
+            <input matInput placeholder="EnterName" formControlName="name" id="name" >
+        </mat-form-field>
+
+        <button mat-button class="btn" type="submit">ENTER</button>
+    </div>
+</form>
+<mat-divider></mat-divider>
+<div>
+    <mat-list role="list" *ngFor="let item of nameArray">
+        <mat-list-item role="listitem">{{item}}</mat-list-item>
+    </mat-list>
+</div>

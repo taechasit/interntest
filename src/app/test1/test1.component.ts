@@ -49,7 +49,7 @@ export class Test1Component implements OnInit {
   }
 
   getShortName(fullName) { 
-    return fullName.split(' ').map(n => n[0]).filter(n => n === n.toUpperCase()).join('');
+    return fullName.split(' ').map(n => n[0]).filter(n => n === n.toUpperCase()).join('')
   }
 
   sortByLength(array) {

@@ -1,7 +1,7 @@
 <form *ngIf="numbersCount <= 0"class="form" [formGroup]="numbersform" (ngSubmit)="onSubmitNumbers(numbersform.value)">
     <div>
         <mat-form-field class="full-width">
-            <input matInput placeholder="EnterNumber" formControlName="numbers" id="numbers" type="number">
+            <input matInput min="0" placeholder="EnterNumber" formControlName="numbers" id="numbers" type="number">
         </mat-form-field>
         <button mat-button class="btn" type="submit">ENTER</button>
     </div>

@@ -1,1 +1,14 @@
-<p>test2 works!</p>
+<form *ngIf="numCheck !== 0.0" class="form" [formGroup]="numbersform" (ngSubmit)="onSubmitNumbers(numbersform.value)">
+    <div>
+        <mat-form-field class="full-width">
+            <input matInput min="0" max="10" placeholder="EnterNumber" formControlName="numbers" id="numbers" type="number">
+        </mat-form-field>
+        <button mat-button class="btn" type="submit">ENTER</button>
+    </div>
+</form>
+<button mat-button *ngIf="numCheck === 0.0" (click)="setNum()">Click Here to Enter Number</button>
+<div>
+    <mat-list role="list" *ngFor="let item of isprimeArray">
+        <mat-list-item role="listitem">{{item.number}} : {{item.isPrime}}</mat-list-item>
+    </mat-list>
+</div>

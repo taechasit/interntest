@@ -4,7 +4,7 @@
             <input matInput placeholder="EnterNumber" formControlName="numbers" id="numbers" >
         </mat-form-field>
         <button mat-button class="btn" type="submit">ENTER</button>
-        <button mat-button *ngIf="numbersCount <= 0 && point > 0" class="btn" type="button" (click)="newGame()">NEW</button>
+        <button mat-button *ngIf="numbersCount == 0 " class="btn" type="button" (click)="newGame()">NEW</button>
     </div>
 </form>
 
@@ -32,7 +32,7 @@
     </mat-grid-list>
 </div>
 <mat-divider></mat-divider>
-<div class="divwAns" *ngIf="numbersCount <= 0 && point > 0">
+<div class="divwAns" *ngIf="numbersCount == 0 ">
     <mat-grid-list cols="1" rowHeight="50px" >
         <mat-grid-tile class="point" >YOUR POINT IS : {{point}}</mat-grid-tile>
     </mat-grid-list>

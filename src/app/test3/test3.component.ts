@@ -9,7 +9,7 @@ import { FormBuilder } from '@angular/forms';
 export class Test3Component implements OnInit {
 
   numbers
-  numbersCount:number = 0;
+  numbersCount:number = -1;
   numbersform
   numbersArray= []
 
@@ -66,7 +66,7 @@ export class Test3Component implements OnInit {
     this.worngAns = []
     this.point = 0
 
-    this.numbersCount= 0;
+    this.numbersCount= -1;
     this.numbersArray= []
   }
 }

@@ -1,0 +1,39 @@
+<form *ngIf="numbersCount <= 0" class="form" [formGroup]="numbersform" (ngSubmit)="onSubmitNumbers(numbersform.value)">
+    <div>
+        <mat-form-field class="full-width">
+            <input matInput placeholder="EnterNumber" formControlName="numbers" id="numbers" >
+        </mat-form-field>
+        <button mat-button class="btn" type="submit">ENTER</button>
+        <button mat-button *ngIf="numbersCount <= 0 && point > 0" class="btn" type="button" (click)="newGame()">NEW</button>
+    </div>
+</form>
+
+<form *ngIf="numbersCount > 0" class="form" [formGroup]="ansform" (ngSubmit)="onSubmitAns(ansform.value)">
+    
+    <div>
+        {{numbersCount}} : 
+        <mat-form-field class="full-width">
+            <input matInput placeholder="EnterYourAnswer" formControlName="ans" id="ans" >
+        </mat-form-field>
+
+        <button mat-button class="btn" type="submit">ENTER</button>
+    </div>
+</form>
+<mat-divider></mat-divider>
+<div>
+    <mat-grid-list cols="12" rowHeight="50px" >
+        <mat-grid-tile *ngFor="let item of ansArray">{{item}}</mat-grid-tile>
+    </mat-grid-list>
+</div>
+<mat-divider></mat-divider>
+<div class="divwAns">
+    <mat-grid-list cols="12" rowHeight="50px" >
+        <mat-grid-tile class="wAns" *ngFor="let item of worngAns">{{item}}</mat-grid-tile>
+    </mat-grid-list>
+</div>
+<mat-divider></mat-divider>
+<div class="divwAns" *ngIf="numbersCount <= 0 && point > 0">
+    <mat-grid-list cols="1" rowHeight="50px" >
+        <mat-grid-tile class="point" >YOUR POINT IS : {{point}}</mat-grid-tile>
+    </mat-grid-list>
+</div>

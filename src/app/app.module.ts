@@ -14,17 +14,20 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatButtonModule} from '@angular/material/button';
 import {MatListModule} from '@angular/material/list';
 import {MatDividerModule} from '@angular/material/divider';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 
 import { Test1Component } from './test1/test1.component';
 import { Test2Component } from './test2/test2.component';
+import { Test3Component } from './test3/test3.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainComponent,
     Test1Component,
-    Test2Component
+    Test2Component,
+    Test3Component
   ],
   imports: [
     BrowserModule,
@@ -39,6 +42,7 @@ import { Test2Component } from './test2/test2.component';
     ReactiveFormsModule,
     MatListModule,
     MatDividerModule,
+    MatGridListModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

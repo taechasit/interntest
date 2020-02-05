@@ -1,0 +1,32 @@
+<pre class="python" style="font-family:monospace;"><span style="color: #ff7700;font-weight:bold;">import</span> requests
+    url <span style="color: #66cc66;">=</span> <span style="color: #483d8b;">&quot;https://theinternship.io/&quot;</span>
+    data <span style="color: #66cc66;">=</span> requests.<span style="color: black;">get</span><span style="color: black;">&#40;</span>url<span style="color: black;">&#41;</span>
+    <span style="color: #ff7700;font-weight:bold;">from</span> bs4 <span style="color: #ff7700;font-weight:bold;">import</span> BeautifulSoup
+    &nbsp;
+    soup <span style="color: #66cc66;">=</span> BeautifulSoup<span style="color: black;">&#40;</span>data.<span style="color: black;">text</span><span style="color: #66cc66;">,</span><span style="color: #483d8b;">'html.parser'</span><span style="color: black;">&#41;</span>
+    x <span style="color: #66cc66;">=</span> soup.<span style="color: black;">find_all</span><span style="color: black;">&#40;</span><span style="color: #483d8b;">&quot;img&quot;</span><span style="color: #66cc66;">,</span><span style="color: black;">&#123;</span><span style="color: #483d8b;">&quot;class&quot;</span>:<span style="color: #483d8b;">&quot;center-logos&quot;</span><span style="color: black;">&#125;</span><span style="color: black;">&#41;</span>
+    &nbsp;
+    comimg <span style="color: #66cc66;">=</span> <span style="color: black;">&#91;</span><span style="color: black;">&#93;</span>
+    <span style="color: #ff7700;font-weight:bold;">for</span> i <span style="color: #ff7700;font-weight:bold;">in</span> x:
+        comimg.<span style="color: black;">append</span><span style="color: black;">&#40;</span>i<span style="color: black;">&#91;</span><span style="color: #483d8b;">'src'</span><span style="color: black;">&#93;</span><span style="color: black;">&#41;</span>
+    &nbsp;
+    &nbsp;
+    x <span style="color: #66cc66;">=</span> soup.<span style="color: black;">find_all</span><span style="color: black;">&#40;</span><span style="color: #483d8b;">&quot;span&quot;</span><span style="color: #66cc66;">,</span><span style="color: black;">&#123;</span><span style="color: #483d8b;">&quot;class&quot;</span>:<span style="color: #483d8b;">&quot;list-company&quot;</span><span style="color: black;">&#125;</span><span style="color: black;">&#41;</span>
+    comtitle <span style="color: #66cc66;">=</span><span style="color: black;">&#91;</span><span style="color: black;">&#93;</span>
+    <span style="color: #ff7700;font-weight:bold;">for</span> i <span style="color: #ff7700;font-weight:bold;">in</span> x:
+        comtitle.<span style="color: black;">append</span><span style="color: black;">&#40;</span>i.<span style="color: black;">text</span><span style="color: black;">&#41;</span>
+    &nbsp;
+    &nbsp;
+    compart <span style="color: #66cc66;">=</span> <span style="color: black;">&#91;</span><span style="color: black;">&#93;</span>
+    &nbsp;
+    <span style="color: #ff7700;font-weight:bold;">for</span> i <span style="color: #ff7700;font-weight:bold;">in</span> comimg:
+        <span style="color: #ff7700;font-weight:bold;">for</span> j <span style="color: #ff7700;font-weight:bold;">in</span> comtitle:
+            compart.<span style="color: black;">append</span><span style="color: black;">&#40;</span><span style="color: black;">&#123;</span><span style="color: #483d8b;">&quot;img&quot;</span> :i <span style="color: #66cc66;">,</span><span style="color: #483d8b;">&quot;title&quot;</span> : j <span style="color: #66cc66;">,</span><span style="color: #483d8b;">&quot;len&quot;</span> :<span style="color: #008000;">len</span><span style="color: black;">&#40;</span>j<span style="color: black;">&#41;</span><span style="color: black;">&#125;</span><span style="color: black;">&#41;</span>
+    &nbsp;
+    <span style="color: #ff7700;font-weight:bold;">def</span> myFunc<span style="color: black;">&#40;</span>e<span style="color: black;">&#41;</span>:
+      <span style="color: #ff7700;font-weight:bold;">return</span> e<span style="color: black;">&#91;</span><span style="color: #483d8b;">'len'</span><span style="color: black;">&#93;</span>
+    &nbsp;
+    compart.<span style="color: black;">sort</span><span style="color: black;">&#40;</span>key<span style="color: #66cc66;">=</span>myFunc<span style="color: black;">&#41;</span>
+    &nbsp;
+    <span style="color: #ff7700;font-weight:bold;">for</span> i <span style="color: #ff7700;font-weight:bold;">in</span> compart:
+        <span style="color: #ff7700;font-weight:bold;">print</span><span style="color: black;">&#40;</span>i<span style="color: black;">&#91;</span><span style="color: #483d8b;">'img'</span><span style="color: black;">&#93;</span><span style="color: black;">&#41;</span></pre>

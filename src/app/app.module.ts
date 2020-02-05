@@ -20,6 +20,7 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import { Test1Component } from './test1/test1.component';
 import { Test2Component } from './test2/test2.component';
 import { Test3Component } from './test3/test3.component';
+import { Test4Component } from './test4/test4.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { Test3Component } from './test3/test3.component';
     MainComponent,
     Test1Component,
     Test2Component,
-    Test3Component
+    Test3Component,
+    Test4Component
   ],
   imports: [
     BrowserModule,
